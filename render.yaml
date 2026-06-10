@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: livechat-project
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn livechat_project.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DJANGO_SETTINGS_MODULE
+        value: livechat_project.settings
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
