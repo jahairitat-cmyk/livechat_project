@@ -3,7 +3,7 @@ services:
     name: livechat-project
     env: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn livechat_project.wsgi:application"
+    startCommand: "gunicorn livechat_project.wsgi"
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
